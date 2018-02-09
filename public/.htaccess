@@ -1,7 +1,7 @@
 Options -MultiViews
 RewriteEngine On
 
-RewriteBase /plazaalemania/public
+RewriteBase /medicaloffice/public
 
 
 RewriteCond %{REQUEST_FILENAME} !-d

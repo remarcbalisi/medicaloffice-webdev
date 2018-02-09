@@ -11,7 +11,7 @@
 <form class="" action="<?php echo Globals::baseUrl(); ?>/public/adminlogin/login" method="post">
     <input type="email" name="email" value="" placeholder="email" required>
     <input type="password" name="password" value="" placeholder="password" required>
-    <button type="submit" name="login">Login</button>
+    <button type="submit" name="login">Loginfdfd</button>
 </form>
 
 </body>
