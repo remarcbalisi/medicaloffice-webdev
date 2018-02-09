@@ -2,7 +2,7 @@
 
 class Globals{
 
-    protected static $root_dir = "mvc";
+    protected static $root_dir = "medicaloffice";
     protected static $http = "http://";
     protected static $host = "localhost";
 

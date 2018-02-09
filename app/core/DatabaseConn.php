@@ -4,7 +4,7 @@ class DatabaseConn{
     protected $servername = "localhost";
     protected $username = "root";
     protected $password = "";
-    protected $dbname = "plazaalemania";
+    protected $dbname = "medicaloffice";
     public $connection;
 
     public function __construct(){
