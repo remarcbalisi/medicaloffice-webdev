@@ -7,7 +7,7 @@ class Globals{
     protected static $host = "localhost";
 
     public static function baseUrl(){
-        $root_dir = "mvc";
+        $root_dir = "medicaloffice";
         $http = "http://";
         $host = "localhost";
         $base_url = $http . $host . "/" . $root_dir;

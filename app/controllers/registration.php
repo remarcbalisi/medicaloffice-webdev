@@ -6,8 +6,12 @@ class Registration extends Controller{
 
         $prefixnames = $this->model('PrefixName')->get();
         $gender = $this->model('Gender')->get();
+        $maritalstats = $this->model('MaritalStatus')->get();
+        $referrals = $this->model('Referral')->get();
         $this->view('home/index', ['prefixnames'=>$prefixnames,
-            'gender'=> $gender
+            'gender'=> $gender,
+            'maritalstats' => $maritalstats,
+            'referrals' => $referrals
         ]);
 
     }
