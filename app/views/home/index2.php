@@ -1,18 +1,25 @@
-<?php include_once '../app/views/header/header.php' ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Patient Registration</title>
+	 <link rel="stylesheet" type="text/css" href="medical.css">
+    </head>
+<body>
+  
 
 <form action="view.php">
-
+  
     <h1 class="A"><center>REGISTRATION FORM</center></h1>
-
-
+  
+  
 	  <h3 class="A">Today's Date
-		<input type="Date" name="Date" value="Date">
+		<input type="Date" name="Date" value="Date"> 
      </h3>
 
 
-
+ 
   <h2 class="A">PATIENT PERSONAL INFORMATION</h2>
-
+     
     <p class="p1">
     Last Name
     	<input type="text" placeholder="" name="last_name" required>
@@ -23,7 +30,7 @@
  Middle Name
     	<input type="text" placeholder="" name="middle_name" required>
     <br><br>
-
+	
   Street Address
     	<input type="text" placeholder="" name="address" required>
 
@@ -55,7 +62,7 @@
 
   Socal Security #
 	   <input type="number" placeholder="" name="sss" ><br><br>
-
+		
   Marital Status<br>
 	   <input type="radio" name="status" value="single"> Single
 	   <input type="radio" name="status" value="married"> Married
@@ -63,19 +70,21 @@
 	   <input type="radio" name="status" value="divorced"> Divorced<br><br>
 
   Gender<br>
-  <?php foreach( $data['gender'] as $g ): ?>
-      <input type="radio" name="gender" value="<?php echo $g['gendername'] ?>"> <?php echo $g['gendername'] ?>
-  <?php endforeach; ?>
+	   <input type="radio" name="gender" value="male"> Male
+	   <input type="radio" name="gender" value="female">Female
 	 <br>
-
-     <?php foreach( $data['prefixnames'] as $pn ): ?>
-         <label for="<?php echo $pn['prename'] ?>"><?php echo $pn['prename'] ?></label>
-     	   <input type="radio" name="prefixname" id="prefixname" value="<?php echo $pn['prename'] ?>">
-     <?php endforeach; ?>
+	<label for="Mr.">Mr.</label>
+	   <input type="radio" name="gender" id="male" value="male">
+	<label for="Mrs">Mrs.</label>
+	   <input type="radio" name="gender" id="female" value="female">
+	<label for="Dr.">Dr.</label>
+	   <input type="radio" name="gender" id="other" value="other">
+	<label for="Miss">Miss</label>
+	   <input type="radio" name="gender" id="other" value="other">
 	     <br><br>
             </p><hr>
-
-
+          
+             
 	<h2 class="B">INSURANCE INFORMATION</h2>
 
   <p class="p3">
@@ -152,9 +161,9 @@
 	Referral #
      <input type="number" placeholder="" name="refnum">
      <br>
-		</p> <hr>
-
-
+		</p> <hr> 
+		
+	
 	<h2 class="B">FAMILY PHYSICIAN INFORMATION</h2>
   <p class="p3">
 	Medical Doctor's Name
@@ -216,13 +225,13 @@
    <br><br>
   </p> <hr>
 
-
+     
       <center><button type="submit"  class="button">
        R E G I S T E R </button></center>
+    
 
 
-
-
+    
 </form>
 
 </body>
