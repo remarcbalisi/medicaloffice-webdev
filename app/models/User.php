@@ -2,15 +2,25 @@
 
 class User{
     public $id;
+    public $maritalstat_id;
+    public $prefixname_id;
+    public $gender_id;
     public $fname;
     public $mname;
     public $lname;
     public $email;
     public $password;
-    public $address;
-    public $contact;
-    public $gender;
-    public $prof_pic;
+    public $st_address;
+    public $city;
+    public $state;
+    public $zipcode;
+    public $homephone;
+    public $workphone;
+    public $cellphone;
+    public $birth;
+    public $age;
+    public $sss_no;
+    public $registration_date;
     public $role_id;
     public $auth;
 
@@ -36,7 +46,7 @@ class User{
 
     public function getByRole($role){
 
-        
+
 
     }
 
@@ -72,8 +82,9 @@ class User{
 
         $this->createConnection();
 
-        $sql = "INSERT INTO user (fname, mname, lname, email, password, address, contact, gender, prof_pic, role_id)
-        VALUES ('".$model->fname."', '".$model->mname."', '".$model->lname."', '".$model->email."', '".$model->password."', '".$model->address."', '".$model->contact."', '".$model->gender."', '".$model->prof_pic."', ".$model->role_id.")";
+        $sql = "INSERT INTO user (role_id, maritalstat_id, prefixname_id, gender_id, fname, mname, lname, st_address, city, state, zipcode, homephone, workphone, cellphone, email, birth, age, sss_no, password, registration_date)
+        VALUES ('".$model->role_id."', '".$model->maritalstat_id."', '".$model->prefixname_id."', '".$model->gender_id."', '".$model->fname."', '".$model->mname."', '".$model->lname."', '".$model->st_address."', '".$model->city."', '".$model->state."',
+        '".$model->zipcode."', '".$model->homephone."', '".$model->workphone."', '".$model->cellphone."', '".$model->email."', '".$model->birth."', '".$model->age."', '".$model->sss_no."', '".$model->password."', '".$model->registration_date."')";
 
         $result = $this->conn->query($sql);
         $data = [];

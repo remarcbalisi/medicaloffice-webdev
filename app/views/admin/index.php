@@ -2,7 +2,7 @@
 <?php include_once '../app/views/header/adminheader.php' ?>
 
 <div>
-  <h1>Plaza Alemania Reservation System - Log in</h1>
+  <h1>Medical Office - Login</h1>
 </div>
 
 <?php if( !empty($data['error_msg']) ): ?>

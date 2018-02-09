@@ -8,7 +8,7 @@ class Role{
 
         $this->createConnection();
 
-        $sql = "SELECT id, name FROM role";
+        $sql = "SELECT id, role_name FROM role";
         $result = $this->conn->query($sql);
         $data = [];
 
