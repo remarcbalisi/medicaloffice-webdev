@@ -13,7 +13,8 @@ class AdminHome extends Controller{
         if( $this->auth_user->auth ){
 
             $roles = $this->model('Role')->get();
-            $this->view('admin/home', ['roles'=>$roles, 'user'=>$this->auth_user]);
+            $patients = $this->model('User')->getPatients();
+            $this->view('admin/home', ['roles'=>$roles, 'user'=>$this->auth_user, 'patients'=>$patients]);
 
         }
         else{

@@ -50,6 +50,35 @@ class User{
 
     }
 
+    public function getPatients(){
+
+        $this->createConnection();
+
+        $sql = "SELECT u.*, r.role_name, g.gendername, m.maritalstatname,p.prename FROM user u INNER JOIN role r ON u.role_id = r.id INNER JOIN maritalstat m ON u.maritalstat_id = m.id
+        INNER JOIN prefixname p ON u.prefixname_id = p.id INNER JOIN gender g ON u.gender_id = g.id WHERE u.role_id = 2";
+        $result = $this->conn->query($sql);
+        $data = [];
+
+        if (!$result) {
+            trigger_error('Invalid query: ' . $this->conn->error);
+        }
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while( $row = $result->fetch_assoc() ){
+                array_push($data, $row);
+            }
+            return $data;
+
+        } else {
+            $result = [];
+            return $result;
+        }
+
+        $this->closeConnection();
+
+    }
+
     public function getByEmail($email){
 
         $this->createConnection();

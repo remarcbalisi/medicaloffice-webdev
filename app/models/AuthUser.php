@@ -2,15 +2,25 @@
 
 class AuthUser{
     public $id;
+    public $maritalstat_id;
+    public $prefixname_id;
+    public $gender_id;
     public $fname;
     public $mname;
     public $lname;
     public $email;
     public $password;
-    public $address;
-    public $contact;
-    public $gender;
-    public $prof_pic;
+    public $st_address;
+    public $city;
+    public $state;
+    public $zipcode;
+    public $homephone;
+    public $workphone;
+    public $cellphone;
+    public $birth;
+    public $age;
+    public $sss_no;
+    public $registration_date;
     public $role_id;
     public $auth;
 
@@ -43,10 +53,7 @@ class AuthUser{
         $this->mname = $model[0]['mname'];
         $this->lname = $model[0]['lname'];
         $this->email = $model[0]['email'];
-        $this->address = $model[0]['address'];
-        $this->contact = $model[0]['contact'];
-        $this->gender = $model[0]['gender'];
-        $this->prof_pic = $model[0]['prof_pic'];
+        $this->address = $model[0]['st_address'];
         $this->role_id = $model[0]['role_id'];
 
     }

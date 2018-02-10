@@ -137,6 +137,19 @@ class Registration extends Controller{
 
         $newphysicianinfo = $newphysicianinfo->save($newphysicianinfo);
 
+        $succ_msg = "Successfully added " . $newuser->fname;
+
+        $prefixnames = $this->model('PrefixName')->get();
+        $gender = $this->model('Gender')->get();
+        $maritalstats = $this->model('MaritalStatus')->get();
+        $referrals = $this->model('Referral')->get();
+        $this->view('home/index', ['prefixnames'=>$prefixnames,
+            'gender'=> $gender,
+            'maritalstats' => $maritalstats,
+            'referrals' => $referrals,
+            'success_msg'=>$succ_msg
+        ]);
+
     }
 
 

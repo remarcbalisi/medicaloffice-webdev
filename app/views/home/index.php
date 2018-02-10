@@ -1,12 +1,18 @@
 <?php include_once '../app/views/header/header.php' ?>
 
+<?php if( !empty($data['success_msg']) ): ?>
+        <p style="color:green"><?=$data['success_msg']?></p>
+    <?php endif; ?>
+    <?php if( !empty($data['error_msg']) ): ?>
+        <p style="color:red"><?=$data['error_msg']?></p>
+    <?php endif; ?>
 <form action="<?php echo Globals::baseUrl(); ?>/public/registration/create" method="POST">
 
     <h1 class="A">REGISTRATION FORM</h1>
 
 
 	  <h3 class="A">Today's Date
-		<input type="date" name="registration_date">
+		<input type="date" name="registration_date" required>
      </h3>
 
 
@@ -152,11 +158,11 @@
      <br><br>
 
 	Does your plan require a referral?<br>
-	   <input type="radio"  name="referral" value="1"> YES
+	   <input type="radio"  name="referral" value="1" checked="checked"> YES
    	 <input type="radio" name="referral" value="0"> NO
    	<br><br>
  If Yes, was a referral obtained?<br>
-	   <input type="radio" name="referralobtain" value="1"> YES
+	   <input type="radio" name="referralobtain" value="1" checked="checked"> YES
    	 <input type="radio" name="referralobtain" value="0"> NO
    <br><br>
 	Referral #<br>

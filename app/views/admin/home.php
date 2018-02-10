@@ -14,14 +14,14 @@
 </section>
 
 <section class="">
-    <h3>Add Admin/Manager</h3>
+    <!-- <h3>Add Admin/Manager</h3> -->
     <?php if( !empty($data['success_msg']) ): ?>
         <p style="color:green"><?=$data['success_msg']?></p>
     <?php endif; ?>
     <?php if( !empty($data['error_msg']) ): ?>
         <p style="color:red"><?=$data['error_msg']?></p>
     <?php endif; ?>
-    <form enctype="multipart/form-data" action="<?php echo Globals::baseUrl(); ?>/public/adminhome/adduser" method="post">
+    <!-- <form enctype="multipart/form-data" action="<?php echo Globals::baseUrl(); ?>/public/adminhome/adduser" method="post">
         <input type="text" name="fname" value="" placeholder="First name" required>
         <input type="text" name="mname" value="" placeholder="Middle name" required>
         <input type="text" name="lname" value="" placeholder="Last name" required>
@@ -50,7 +50,47 @@
         <input type='file'id="file" name="prof_pic" required>
         <br>
         <button type="submit" name="submit">Add</button>
-    </form>
+    </form> -->
+
+    <table>
+      <tr>
+        <th>Patient's Name First/Middle/Last</th>
+        <th>Marital Status</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>Contact</th>
+        <th>email</th>
+        <th>Birthdate</th>
+        <th>Age</th>
+        <th>SSS #</th>
+      </tr>
+
+        <?php foreach( $data['patients'] as $p ): ?>
+        <tr>
+            <td><?php echo $p['fname'] . " " . $p['mname'] . " " . $p['lname'] ?></td>
+            <td><?php echo $p['maritalstatname'] ?></td>
+            <td><?php echo $p['gendername'] ?></td>
+            <td><?php echo $p['st_address'] . ", " . $p['city'] . " " . $p['state'] . " " . $p['zipcode'] ?></td>
+            <td>
+                Home: <?php echo $p['homephone'] ?><br>
+                Work: <?php echo $p['workphone'] ?><br>
+                Cell: <?php echo $p['cellphone'] ?>
+            </td>
+            <td><?php echo $p['email'] ?></td>
+            <?php
+
+            $timestamp = strtotime($p['birth']);
+            $date_formated = date("jS F, Y", $timestamp);
+
+            ?>
+            <td><?php echo $date_formated; ?></td>
+            <td><?php echo $p['age'] ?></td>
+            <td><?php echo $p['sss_no'] ?></td>
+        </tr>
+        <?php endforeach; ?>
+
+    </table>
+
 </section>
 
 </body>
